@@ -73,3 +73,7 @@ end
 
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Devise
+gem 'devise'
+gem 'dotenv-rails'
