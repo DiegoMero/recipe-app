@@ -1,6 +1,9 @@
-class FoodController < ApplicationController
+class FoodsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @foods = Food.all
+    @user = current_user
+    @user_foods = @user.foods
   end
 
   def new
@@ -18,7 +21,7 @@ class FoodController < ApplicationController
   end
 
   def destroy
-    @food = Post.find(params[:id])
+    @food = Food.find(params[:id])
     @food.destroy
     redirect_to foods_url
   end
