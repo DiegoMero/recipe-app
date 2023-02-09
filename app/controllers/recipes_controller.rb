@@ -8,4 +8,19 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
   end
+
+  def create
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to recipes_url, notice: "Recipe was successfully created."
+    else
+      render :new
+    end
+  end
+  
+
+  def show
+    @recipe = Recipe.find_by(id: params[:id])
+  end
 end
+  
