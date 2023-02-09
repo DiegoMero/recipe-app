@@ -22,5 +22,15 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find_by(id: params[:id])
   end
+
+  def delete
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect_to recipes_url, notice: 'Recipe deleted successfully'
+  end
+
+  def public_recipe
+    @recipes = Recipe.where(public: true)
+  end
 end
   
