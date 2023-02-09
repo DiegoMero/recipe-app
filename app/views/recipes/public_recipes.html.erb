@@ -1,0 +1,19 @@
+<h1>Public Recipes</h1>
+<ul class='public-recipes-container'>
+  <% @public_recipes.each do |recipe| %>
+    <%= link_to "/recipes/#{recipe.id}" do %>
+      <li class='public-recipe-card'>
+        <div>
+          <h2><%= recipe.name %></h2>
+          <h3>By: <%= recipe.user.name %></h3>
+        </div>
+        <div>
+          <h3>Total food items: <%= recipe.recipe_foods.count %></h3>
+          <% @ingredient_ids = recipe.recipe_foods.pluck(:food_id) %>
+          <% @total_price = Food.where(id: @ingredient_ids).sum(:price) %>
+          <h3>Total price: <%= @total_price %></h3>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
