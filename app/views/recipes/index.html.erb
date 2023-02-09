@@ -1,0 +1,9 @@
+<section class='recipes'>
+  <% if(@recipes.any?) %>
+    <% @recipes.each do |recipe| %>
+      <% render partial: 'recipe_card', locals: {recipe: recipe} %>
+    <% end %>
+  <% else %>
+    <P class="show-message"><%= "No recipe to show" %>
+  <% end %>  
+</section>
