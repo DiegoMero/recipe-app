@@ -1,0 +1,8 @@
+.shopping-list-header {
+  display: flex;
+  gap: 30px;
+}
+
+.shopping-list-header h3 {
+  margin-top: 0;
+}
