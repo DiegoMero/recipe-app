@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
     else
       render :new, locals: { recipe: }
     end
-  end  
+  end
 
   def show
     @recipe = Recipe.find_by(id: params[:id])
@@ -35,15 +35,14 @@ class RecipesController < ApplicationController
     recipe.destroy
     redirect_to recipes_url, notice: 'Recipe deleted successfully'
   end
-  
+
   def public_recipes
     @public_recipes = Recipe.where(public: true).order(created_at: :desc)
   end
-  
+
   private
-  
+
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 end
-
