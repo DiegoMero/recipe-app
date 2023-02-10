@@ -1,9 +1,13 @@
 <section class='recipes'>
-  <% if(@recipes.any?) %>
-    <% @recipes.each do |recipe| %>
-      <% render partial: 'recipe_card', locals: {recipe: recipe} %>
+  <h2>Recipes</h2>
+  <%= button_to 'New Recipe', new_recipe_url, method: :get %>
+  <div>
+    <% if(@recipes.any?) %>
+      <% @recipes.each do |recipe| %>
+        <%= render partial: 'recipe_card', locals: {recipe: recipe} %>
+      <% end %>
+    <% else %>
+      <P class="show-message"><%= "No recipe to show" %>
     <% end %>
-  <% else %>
-    <P class="show-message"><%= "No recipe to show" %>
-  <% end %>  
+  </div>
 </section>
