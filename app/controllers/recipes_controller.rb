@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:public_recipe]
 
   def index
-    @recipes = Recipe.where(user_id: current_user.id).or(Recipe.where(public: true))
+    @recipes = Recipe.all
   end
 
   def new
@@ -10,27 +10,39 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-    if @recipe.save
-      redirect_to recipes_url, notice: "Recipe was successfully created."
-    else
-      render :new
+    unless current_user
+      redirect_to new_user_registration_url, notice: 'Please, signup to create a recipe'
+      return
     end
-  end
-  
+
+    recipe = Recipe.new(recipe_params)
+    recipe.user = current_user
+    if recipe.save
+      redirect_to recipe_url(current_user)
+    else
+      render :new, locals: { recipe: }
+    end
+  end  
 
   def show
     @recipe = Recipe.find_by(id: params[:id])
+    @foods = @recipe.recipe_foods.map(&:food)
   end
 
-  def delete
+  def destroy
     recipe = Recipe.find(params[:id])
+    puts recipe
     recipe.destroy
     redirect_to recipes_url, notice: 'Recipe deleted successfully'
   end
-
-  def public_recipe
-    @recipes = Recipe.where(public: true)
+  
+  def public_recipes
+    @public_recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 end
-  
+
+private
+
+def recipe_params
+  params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+end
