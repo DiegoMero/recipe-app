@@ -27,16 +27,17 @@ class FoodsController < ApplicationController
   end
 
   def general_shopping_list
-    @user_recipes = current_user.recipes
-    @missing_foods_cost = 0
-    @missing_recipe_foods = []
-    @user_recipes.each do |recipe|
+    @missing_foods = []
+    current_user.recipes.each do |recipe|
       recipe.recipe_foods.each do |recipe_food|
-        @food = Food.find(recipe_food.food_id)
-        @missing_foods_cost += recipe_food.quantity * @food.price if @food.user_id != current_user.id
-        @missing_food = recipe_food.food unless current_user.foods.include?(recipe_food.food)
-        @missing_recipe_foods << [recipe_food, @missing_food] if @missing_food
+        @food = recipe_food.food
+        @missing_foods << recipe_food unless current_user.foods.include?(@food)
       end
+    end
+    @total_price = 0
+    @missing_foods.each do |missing_food|
+      @food = missing_food.food
+      @total_price += @food.price * missing_food.quantity
     end
   end
 
