@@ -2,10 +2,16 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #f3f3f3;
+}
+
+.recipe.form-container {
+  min-height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-full-page h1 {
