@@ -1,0 +1,20 @@
+.public-recipes-container {
+  padding: 0;
+  list-style: none;
+}
+
+.public-recipe-card {
+  border: solid 2.5px black;
+  margin: 10px;
+  display: flex;
+  padding: 5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.public-recipe-card div {
+  flex-basis: 50%;
+}
