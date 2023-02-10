@@ -1,5 +1,13 @@
+.add-new-food-button a {
+  font-size: large;
+  margin-left: 90%;
+  padding: 5px;
+  border: solid 1px black;
+}
+
 .food-container {
   border: solid 2.5px black;
+  margin-top: 25px;
 }
 
 .food-header {
