@@ -1,0 +1,9 @@
+.recipes {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipes h2 {
+  margin: 10px;
+}
