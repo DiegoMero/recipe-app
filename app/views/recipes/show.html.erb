@@ -1,0 +1,39 @@
+<main>
+  <h2><%= @recipe.name %></h2>
+  <div>
+    <p><span>Preparation Time:</span> <%= @recipe.preparation_time %></p>
+    <%= render partial: 'switch_button', locals: {public: @recipe.public} %>
+  </div>
+  <div>
+    <p><span>Cooking time:</span> <%= @recipe.cooking_time %>hours</p>
+    <p><span>Description</span> <br/> <%= @recipe.description %></p>
+  </div>
+
+  <div>
+    <%= button_to 'Generate Shopping List', '/general_shopping_list', method: :get %>
+    <%= button_to 'Add Ingredient', '/foods/new', method: :get %>
+  </div>
+
+  <hr/>
+  <div class='food-container'>
+    <table class='food-header'>
+      <thead>
+        <tr>Food</tr>
+        <tr>Quantity</tr>
+        <tr>Unit</tr>
+        <tr>Actions</tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td class='food-name'><%= food.name %></td>
+            <td class='food-quantity'><%= food.quantity %> <%= food.measurement_unit %></td>
+            <td class='food-price'>$<%= food.price %></td>
+            <td><div class='delete-food'><%= button_to 'Delete', food_url(food), method: :delete %></div></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  
+</div>
+</main>
