@@ -1,0 +1,21 @@
+<h1>Shopping List</h1>
+<div class='shopping-list-header'>
+  <h3>Amout of items to buy: <%= @missing_foods.count %></h3>
+  <h3>Total value of food needed: $<%= @total_price %></h3>
+</div>
+<div>
+  <div class='food-header'>
+    <h3 class='food-name'>Food</h3>
+    <h3 class='food-quantity'>Quantity</h3>
+    <h3 class='delete-food'>Price</h3>
+  </div>
+  <ul class='food-list'>
+    <% @missing_foods.each do |food| %>
+      <li class='food-item'>
+        <h3 class='food-name'><%= food.food.name %></h3>
+        <h3 class='food-quantity'><%= food.quantity %> <%= food.food.measurement_unit %></h3>
+        <h3 class='food-price'>$<%= food.food.price * food.quantity %></h3>
+      </li>
+    <% end %>
+  </ul>
+</div>
