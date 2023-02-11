@@ -16,7 +16,7 @@
 }
 
 .recipes .recipe {
-  gap: 15px
+  gap: 15px;
 }
 
 .recipes-container button {
@@ -29,8 +29,4 @@
 
 .recipe-action {
   gap: 15px;
-}
-
-.recipe-desc {
-
 }

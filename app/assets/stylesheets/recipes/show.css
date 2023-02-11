@@ -17,7 +17,7 @@
 
 .show-recipe .line1,
 .show-recipe .line3 {
- justify-content: space-between;
+  justify-content: space-between;
 }
 
 .show-recipe .line2 {
