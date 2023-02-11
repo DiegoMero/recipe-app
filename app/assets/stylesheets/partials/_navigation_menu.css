@@ -4,3 +4,10 @@
   margin-bottom: 10px;
   justify-content: space-around;
 }
+
+.foods_page,
+.recipes_page,
+.public_recipes,
+.shopping_list {
+  color: #f3f3f3;
+}

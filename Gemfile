@@ -83,3 +83,4 @@ gem 'devise'
 
 # CanCanCan
 gem 'cancancan'
+gem 'dotenv-rails'

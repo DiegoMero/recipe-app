@@ -1,4 +1,4 @@
-<%= render partial: 'partials/navigation_menu' %>
+<%= render partial: 'partials/navigation_menu', locals: {visited: 'shopping_list'} %>
 <h1>Shopping List</h1>
 <div class='shopping-list-header'>
   <h3>Amout of items to buy: <%= @missing_foods.count %></h3>
