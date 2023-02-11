@@ -1,9 +1,9 @@
 <%= render partial: 'partials/navigation_menu', locals: {visited: 'recipes'} %>
-<section class='section-full-page'>
-  <div class='recipes'> 
-    <h2>Recipes</h2>
-    <%= button_to 'New Recipe', new_recipe_url, method: :get %>
-    <div>
+<section class="section-full-page">
+  <div class="recipes-container"> 
+    <% #<h2>Recipes</h2> %>
+    <%= button_to 'New Recipe', new_recipe_url, method: :get, class: 'new-recipe' %>
+    <div class="recipes">
       <% if(@user_recipes.any?) %>
         <% @user_recipes.each do |recipe| %>
           <%= render partial: 'recipe_card', locals: {recipe: recipe} %>

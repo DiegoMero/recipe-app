@@ -1,8 +1,20 @@
 .header {
   display: flex;
-  background: rgb(156, 156, 156);
+  background: #7056d8;
   margin-bottom: 10px;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5px;
+  box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.header h2 {
+  margin: 0 5px;
+}
+
+.header button[type='submit'] {
+  color: white;
+  background: #3e3078;
 }
 
 .foods_page,

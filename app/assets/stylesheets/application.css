@@ -22,3 +22,12 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+button {
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  background: #7c5ff0;
+  cursor: pointer;
+  margin: 5px;
+}

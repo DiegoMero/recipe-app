@@ -26,7 +26,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.include(:recipe_food).find_by(id: params[:id])
     @recipe = Recipe.find_by(id: params[:id])
     @foods = @recipe.recipe_foods.map(&:food)
   end

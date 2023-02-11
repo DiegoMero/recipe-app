@@ -1,9 +1,27 @@
-.recipes {
+.recipes-container {
   width: 90%;
   display: flex;
   flex-direction: column;
 }
 
-.recipes h2 {
-  margin: 10px;
+.recipes-container h2 {
+  display: flex;
+}
+
+.recipe {
+  border: 1px solid black;
+  background: #fafafa;
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.5);
+  /* width: 80%; */
+  margin: 30px 10%;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.recipes-container button {
+  padding: 5px;
+}
+
+.recipes-container .new-recipe {
+  padding: 10px;
 }
