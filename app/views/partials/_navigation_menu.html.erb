@@ -3,4 +3,9 @@
   <h2><%= link_to "Recipes", "/recipes" %></h2>
   <h2><%= link_to "Public Recipes", "/public_recipes" %></h2>
   <h2><%= link_to "Shopping List", "/general_shopping_list" %></h2>
+  <% if(current_user) %>
+    <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= button_to 'Sign In', user_session_path, method: :post %>
+  <% end %>
 </div>
