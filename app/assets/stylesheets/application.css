@@ -31,3 +31,12 @@ button {
   cursor: pointer;
   margin: 5px;
 }
+
+.dflex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.dflex-row {
+  display: flex;
+}

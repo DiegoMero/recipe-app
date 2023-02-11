@@ -9,11 +9,14 @@
 }
 
 .recipe {
-  border: 1px solid black;
   box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.5);
   margin: 30px 10%;
   border-radius: 5px;
   padding: 15px;
+}
+
+.recipes .recipe {
+  gap: 15px
 }
 
 .recipes-container button {
@@ -22,4 +25,12 @@
 
 .recipes-container .new-recipe {
   padding: 10px;
+}
+
+.recipe-action {
+  gap: 15px;
+}
+
+.recipe-desc {
+
 }
