@@ -7,7 +7,9 @@
 
 .food-container {
   border: solid 2.5px black;
-  margin-top: 25px;
+  margin: 25px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .food-header {
@@ -17,7 +19,7 @@
 
 .food-header h3 {
   padding: 5px;
-  margin: 0;
+  margin: 3px;
 }
 
 .food-name {

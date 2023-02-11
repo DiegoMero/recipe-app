@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
     recipe = Recipe.new(recipe_params)
     recipe.user = current_user
     if recipe.save
-      redirect_to recipe_url(current_user)
+      redirect_to recipes_url
     else
       render :new, locals: { recipe: }
     end
