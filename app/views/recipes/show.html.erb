@@ -1,3 +1,4 @@
+<%= render partial: 'partials/navigation_menu' %>
 <main>
   <h2><%= @recipe.name %></h2>
   <div>
@@ -11,7 +12,9 @@
 
   <div>
     <%= button_to 'Generate Shopping List', '/general_shopping_list', method: :get %>
-    <%= button_to 'Add Ingredient', '/foods/new', method: :get %>
+    <% if can? :add_new_food, @recipe %>
+      <%= button_to 'Add Ingredient', '/foods/new', method: :get %>
+    <% end %>
   </div>
 
   <hr/>
@@ -20,7 +23,7 @@
       <thead>
         <tr>Food</tr>
         <tr>Quantity</tr>
-        <tr>Unit</tr>
+        <tr>Value</tr>
         <tr>Actions</tr>
       </thead>
       <tbody>

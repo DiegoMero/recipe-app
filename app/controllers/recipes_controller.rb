@@ -2,7 +2,8 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:public_recipe]
 
   def index
-    @recipes = Recipe.all
+    @user = current_user
+    @user_recipes = @user.recipes
   end
 
   def new
