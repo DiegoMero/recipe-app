@@ -7,10 +7,9 @@
 
 .food-container {
   border: solid 2.5px black;
-  margin-top: 25px;
+  margin: 25px 20px;
   display: flex;
   flex-direction: column;
-  margin: 20px;
 }
 
 .food-header {
