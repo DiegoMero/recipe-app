@@ -48,4 +48,15 @@
 
 .recipe.form-container form textarea {
   min-height: 100px;
+  margin-bottom: 10px;
+}
+
+.recipe.form-container .label-container {
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+.recipe.form-container .label-container select {
+  flex-grow: 1;
 }
