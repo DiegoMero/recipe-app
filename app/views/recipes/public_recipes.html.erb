@@ -1,4 +1,4 @@
-<%= render partial: 'partials/navigation_menu' %>
+<%= render partial: 'partials/navigation_menu', locals: {visited: 'public_recipes'} %>
 <h1>Public Recipes</h1>
 <ul class='public-recipes-container'>
   <% @public_recipes.each do |recipe| %>

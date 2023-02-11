@@ -1,8 +1,8 @@
 <div class='header'>
-  <h2><%= link_to "Foods", "/foods" %></h2>
-  <h2><%= link_to "Recipes", "/recipes" %></h2>
-  <h2><%= link_to "Public Recipes", "/public_recipes" %></h2>
-  <h2><%= link_to "Shopping List", "/general_shopping_list" %></h2>
+<h2 class=<%= "#{visited == 'foods' ? 'foods_page' : ''}" %>><%= link_to "Foods", "/foods" %></h2>
+<h2 class=<%= "#{visited == 'recipes' ? 'recipes_page' : ''}" %>><%= link_to "Recipes", "/recipes" %></h2>
+<h2 class=<%= "#{visited == 'public_recipes' ? 'public_recipes' : ''}" %>><%= link_to "Public Recipes", "/public_recipes" %></h2>
+<h2 class=<%= "#{visited == 'shopping_list' ? 'shopping_list' : ''}" %>><%= link_to "Shopping List", "/general_shopping_list" %></h2>
   <% if(current_user) %>
     <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
   <% else %>
