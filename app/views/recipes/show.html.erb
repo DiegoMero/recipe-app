@@ -13,7 +13,7 @@
   <div class="dflex-row line3">
     <%= button_to 'Generate Shopping List', '/general_shopping_list', method: :get %>
     <% if can? :add_new_food, @recipe %>
-      <%= button_to 'Add Ingredient', '/foods/new', method: :get %>
+      <%= button_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe.id), method: :get %>
     <% end %>
   </div>
 

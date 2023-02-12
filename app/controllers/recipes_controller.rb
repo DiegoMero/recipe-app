@@ -32,7 +32,6 @@ class RecipesController < ApplicationController
 
   def destroy
     recipe = Recipe.find(params[:id])
-    puts recipe
     recipe.destroy
     redirect_to recipes_url, notice: 'Recipe deleted successfully'
   end

@@ -1,0 +1,14 @@
+<%= form_with model: @recipe_food, url: recipe_recipe_foods_path(params[:recipe_id]), method: :post, local: true do |form| %>
+
+  <%= form.number_field :quantity, placeholder: "Enter quantity", :required => true %>
+
+  <div class="label-container">
+    <%= form.label :food, class: "label" %>
+    <% options = @foods.map do |food| %>
+      <% [food[:name], food[:id]] %>
+    <% end %>
+    <%= form.select :food, options_for_select(options), :required => true %>
+  </div>
+
+  <%= form.submit class: "submit-button" %>
+<% end %>
