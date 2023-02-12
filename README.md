@@ -63,12 +63,13 @@ In order to run this project you need:
 
 ### Setup
 
-Clone this repository to your desired folder:
+- Clone this repository to your desired folder:
+    ```sh
+    cd my-folder
+    git clone git@github.com:DiegoMero/recipe-app.git
+    ```
+- Create a `.env` file in the root directory with your database configuration details following the `.env.example` file as guide
 
-```sh
-  cd folder
-  git clone git@github.com:DiegoMero/recipe-app.git
-```
 
 ### Install
 
@@ -97,6 +98,12 @@ To run the project, execute the following command:
 - GitHub: [@DiegoMero](https://github.com/DiegoMero)
 - Twitter: [@Dimero18](https://twitter.com/Dimero18)
 - LinkedIn: [Diego Mero](https://www.linkedin.com/in/diego-mero/)
+
+👤 **Emmanuel Orji-Ihuoma**
+
+- GitHub: [@emmiiorji](https://github.com/emmiiorji)
+- Twitter: [@emmiiorji](https://twitter.com/emmiiorji)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/orji-emmanuel)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
