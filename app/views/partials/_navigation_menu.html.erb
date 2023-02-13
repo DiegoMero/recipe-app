@@ -1,0 +1,13 @@
+<div class='header'>
+
+  <%= link_to "Foods", "/foods", class: "#{visited == 'foods' ? 'foods_page' : ''}" %>
+  <%= link_to "Recipes", "/recipes", class: "#{visited == 'recipes' ? 'recipes_page' : ''}" %>
+  <%= link_to "Public Recipes", "/public_recipes", class: "#{visited == 'public_recipes' ? 'public_recipes' : ''}" %>
+  <%= link_to "Shopping List", "/general_shopping_list", class: "#{visited == 'shopping_list' ? 'shopping_list' : ''}" %>
+
+  <% if(current_user) %>
+    <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= button_to 'Sign In', user_session_path, method: :post %>
+  <% end %>
+</div>

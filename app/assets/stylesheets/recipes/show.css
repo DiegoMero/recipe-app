@@ -1,0 +1,58 @@
+.show-recipe {
+  gap: 10px;
+  padding: 10px 5%;
+}
+
+.show-recipe h2 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 28px;
+}
+
+.show-recipe .show-public {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.show-recipe .line1,
+.show-recipe .line3 {
+  justify-content: space-between;
+}
+
+.show-recipe .line2 {
+  gap: 10px;
+}
+
+.show-recipe p span {
+  font-weight: bolder;
+}
+
+.show-recipe hr {
+  border: 1px solid rgb(68, 63, 63);
+  outline: none;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background-color: #a9a9a9;
+  font-weight: bold;
+}
+
+td,
+th {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.foods button {
+  background: #ff4500;
+  color: white;
+}

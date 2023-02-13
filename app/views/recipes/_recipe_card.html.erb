@@ -1,0 +1,9 @@
+<div class='recipe dflex-row'>
+  <div class="recipe-action dflex-col">
+    <%= link_to recipe_path(recipe) do %>
+      <h2><%= recipe.name %></h2>
+    <% end %> 
+    <%= button_to 'Remove', recipe_url(recipe), method: :delete %>
+  </div>
+  <p class="recipe-desc"><%= recipe.description %></p>
+</div>

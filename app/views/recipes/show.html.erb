@@ -1,0 +1,41 @@
+<%= render partial: 'partials/navigation_menu', locals: {visited: 'recipes'} %>
+<main class="show-recipe dflex-col">
+  <h2><%= @recipe.name %></h2>
+  <div class="dflex-row line1">
+    <p><span>Preparation Time:</span> <%= @recipe.preparation_time %>hour</p>
+    <%= render partial: 'switch_button', locals: {public: @recipe.public} %>
+  </div>
+  <div class="dflex-col line2">
+    <p><span>Cooking time:</span> <%= @recipe.cooking_time %>hours</p>
+    <p><span>Description:</span> <br/> <%= @recipe.description %></p>
+  </div>
+
+  <div class="dflex-row line3">
+    <%= button_to 'Generate Shopping List', '/general_shopping_list', method: :get %>
+    <% if can? :add_new_food, @recipe %>
+      <%= button_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe.id), method: :get %>
+    <% end %>
+  </div>
+
+  <hr/>
+  <table class="foods" cellspacing=0>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.quantity %> <%= food.measurement_unit %></td>
+          <td>$<%= food.price %></td>
+          <td><div class='delete-food'><%= button_to 'Delete', food_url(food), method: :delete %></div></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>

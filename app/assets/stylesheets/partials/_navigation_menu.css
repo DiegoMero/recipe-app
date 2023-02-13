@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  background: #7056d8;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.header a {
+  margin: 0 5px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.header button[type='submit'] {
+  color: white;
+  background: #3e3078;
+}
+
+.foods_page,
+.recipes_page,
+.public_recipes,
+.shopping_list {
+  color: #f3f3f3;
+}

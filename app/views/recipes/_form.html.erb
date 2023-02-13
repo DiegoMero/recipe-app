@@ -1,0 +1,18 @@
+<%= form_with model: @recipe, url: recipes_path, method: :post, local: true do |form| %>
+
+  <%= form.text_field :name, placeholder: "Enter name of recipe...", :required => true %>
+
+  <%= form.number_field :preparation_time, placeholder: "Enter preparation time", :required => true %>
+
+  <%= form.number_field :cooking_time, placeholder: "Enter cooking time...", :required => true %>
+
+  <div class="label-container">
+    <%= form.label :public, class: "label" %>
+    <%= form.select :public, options_for_select(["True", "False"]), :required => true %>
+  </div>
+
+  <%= form.text_area :description, placeholder: "Enter recipe's description...", :required => true %>
+
+  <%= form.submit class: "submit-button" %>
+<% end %>
+  

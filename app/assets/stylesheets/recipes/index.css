@@ -1,0 +1,32 @@
+.recipes-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipes-container h2 {
+  display: flex;
+}
+
+.recipe {
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.5);
+  margin: 30px 10%;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.recipes .recipe {
+  gap: 15px;
+}
+
+.recipes-container button {
+  padding: 5px;
+}
+
+.recipes-container .new-recipe {
+  padding: 10px;
+}
+
+.recipe-action {
+  gap: 15px;
+}
